@@ -1,0 +1,7 @@
+# Концепт на GitHub Pages — закрыт от индексации.
+# Полная версия на домене клиента: заменить на
+#   User-agent: *
+#   Allow: /
+#   Sitemap: https://bliekorius.lt/sitemap.xml
+User-agent: *
+Disallow: /

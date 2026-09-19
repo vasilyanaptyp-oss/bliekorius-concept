@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Плейсхолдер: на домене клиента указать абсолютные URL всех страниц. Концепту sitemap не нужен. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://bliekorius.lt/</loc>
+  </url>
+</urlset>

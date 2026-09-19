@@ -1,0 +1,8 @@
+# Исходники и рабочие файлы — не публикуем
+_src/
+_qa/
+*.log
+*.exit
+*.pid
+.DS_Store
+Thumbs.db
