@@ -1,18 +1,14 @@
-/* ui.js — работает всегда: без CDN, без GSAP, до полной загрузки.
-   Здесь: нижняя панель звонка (скрыть, когда основной номер виден),
-   SMS-ссылки, переключение языка, копирование номера. Никаких анимаций. */
+/* ui.js — работает всегда: без CDN, без GSAP. Нижняя панель звонка прячется,
+   когда в зоне видимости основная кнопка телефона. Никаких анимаций. */
 (function () {
   'use strict';
-
-  // Прятать нижнюю панель, когда в зоне видимости основной номер (IntersectionObserver — прогресс.
-  // Без IO панель просто остаётся: звонок доступен всегда.)
   try {
     var bar = document.querySelector('.callbar');
-    var main = document.querySelector('a[href^="tel:"], .btn');
+    var main = document.querySelector('.bigphone') || document.querySelector('a[href^="tel:"]');
     if (bar && main && 'IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
-        bar.style.display = entries[entries.length - 1].isIntersecting ? 'none' : '';
-      }, { threshold: 0.5 }).observe(main);
+        bar.style.visibility = entries[entries.length - 1].isIntersecting ? 'hidden' : 'visible';
+      }, { threshold: 0.4 }).observe(main);
     }
   } catch (e) { /* панель остаётся видимой */ }
 })();
